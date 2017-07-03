@@ -1,4 +1,3 @@
-/*input styling designed by Angela Velasquez https://codepen.io/AngelaVelasquez/pen/Eypnq*/
 body, html{
   height: 100%;
   background: #222222;
@@ -87,6 +86,7 @@ ul li .check::before {
   -webkit-transition: background 0.25s linear;
 }
 
+/*input styling designed by Angela Velasquez https://codepen.io/AngelaVelasquez/pen/Eypnq*/
 input[type=radio]:checked ~ .check {
   border: 5px solid #0DFF92;
 }
