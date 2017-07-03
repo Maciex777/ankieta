@@ -7,8 +7,8 @@ $rezultat=mysql_query("select * from sonda");
 
    
     while($r = mysql_fetch_array($rezultat)) { 
-	      echo "<table cellpadding=\"3\" border=1>"; 
-	      echo "<tr bgcolor=\"#CCCCFF\">"; 
+	echo "<table cellpadding=\"3\" border=1>"; 
+	echo "<tr bgcolor=\"#CCCCFF\">"; 
         echo "<td><strong>Czarna</strong></td>"; 
         echo "<td><strong>Earl Grey</strong></td>"; 
         echo "<td><strong>Zielona</strong></td>"; 
@@ -30,8 +30,10 @@ $rezultat=mysql_query("select * from sonda");
         echo "<td>".$r[7]."</td>"; 
         echo "<td>".$r[8]."</td>"; 
         echo "</tr>"; 
-		    echo "</table>";
-        }    
+	echo "</table>";
+	$suma = $r[0] + $r[1] + $r[2] + $r[3] + $r[4] + $r[5] + $r[6] + $r[7] + $r[8];
+	echo "<p>Suma wszystkich głosów: ".$suma."</p>";		
+    }    
 
 mysql_close($polaczenie);
 ?>
