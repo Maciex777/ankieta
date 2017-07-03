@@ -11,6 +11,25 @@
 	
 <?php
 $odp=$_POST["odp"];
+
+$polaczenie=
+
+mysql_connect("localhost","user","password");
+
+mysql_select_db("sonda",$polaczenie);
+
+$rezultat=mysql_query("SELECT odp".$odp." from sonda",$polaczenie);
+
+$wartosc=mysql_fetch_array($rezultat);
+
+$liczba=$wartosc["odp".$odp];
+
+$liczba+=1;
+
+$sql=mysql_query("UPDATE sonda SET odp".$odp."=".$liczba,$polaczenie);
+
+echo "<h2>Dodano głos!</h2>";
+
 if ($odp == "A") { echo "<h2>Twoja ulubiona herbata to czarna</h2>";} 
 elseif ($odp == "B") { echo "<h2>Twoja ulubiona herbata to Earl Grey</h2>"; } 
 elseif ($odp == "C") { echo "<h2>Twoja ulubiona herbata to zielona</h2>";} 
